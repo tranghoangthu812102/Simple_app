@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_locale
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found_rescue
 
   private
   def set_locale
@@ -10,5 +11,10 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def record_not_found_rescue
+    flash[:danger] = t ".not_found"
+    redirect_to root_path
   end
 end
