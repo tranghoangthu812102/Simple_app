@@ -9,10 +9,20 @@ en:
   layouts:
     header:
       login: "Login"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      logout: "Logout"
     footer:
       en: "English"
       vi: "Vietnamese"
       by: "by"
+  sessions:
+    new:
+      new_user: "New User?"
+    create:
+      fail: "Invalid email/password combination"
   static_pages:
     home:
       heading: "Home"
